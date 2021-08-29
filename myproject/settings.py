@@ -39,6 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'crispy_forms',
+
+    'allauth',
+
+    'django.contrib.sites',
+
+    'allauth.account',
 ]
 
 MIDDLEWARE = [
@@ -127,4 +134,10 @@ STATICFILES_DIRS=[
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+LOGIN_REDIRECT_URL = 'homepage'
+LOGOUT_REDIRECT_URL = 'homepage'
+ACCOUNT_LOGOUT_REDIRECT = 'homepage'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+SITE_ID = 1
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
